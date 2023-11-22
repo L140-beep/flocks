@@ -189,7 +189,7 @@ end
 function Boid:draw()
     r, g, b, a = love.graphics.getColor()
 
-    love.graphics.setColor(self.red/255, self.g/255, self.b/255)
+    love.graphics.setColor(math.max(0.1, self.red/255), math.max(0.1, self.g/255), math.max(0.1, self.b/255))
     local theta = self.velocity:heading() + math.pi / 2
     love.graphics.push()
     love.graphics.translate(self.position.x, self.position.y)
